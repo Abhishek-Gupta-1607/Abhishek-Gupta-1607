@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Prediction App</title>
+
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+  <header>
+    <h1>Weather Prediction App</h1>
+  </header>
+
+  <main>
+
+    <input type="text" id="city-name" placeholder="Enter city name">
+    <button type="button" id="search-button">Search</button>
+
+    <div id="current-weather">
+      <h3>Current weather</h3>
+      <p id="current-temperature"></p>
+      <p id="current-humidity"></p>
+      <p id="current-wind-speed"></p>
+    </div>
+
+    <div id="forecast">
+      <h3>Weather forecast</h3>
+      <ul id="forecast-list"></ul>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; 2023 Weather Prediction App</p>
+  </footer>
+
+  <script>
+
+    // Get the city name from the search bar
+    const cityNameInput = document.getElementById('city-name');
+
+    // Get the search button
+    const searchButton = document.getElementById('search-button');
+
+    // Add an event listener to the search button
+    searchButton.addEventListener('click', () => {
+
+      
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityNameInput.value}&appid=YOUR_API_KEY`)
+        .then(response => response.json())
+        .then(data => {
+
+        
+  
+document.getElementById('current-temperature').innerHTML = `Temperature: ${data.main.temp}°C`;
+          document.getElementById('current-humidity').innerHTML = `Humidity: ${data.main.humidity}%`;
+          document.getElementById('current-wind-speed').innerHTML = `Wind speed: ${data.wind.speed} m/s`;
+
+        
+          fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityNameInput.value}&appid=YOUR_API_KEY`)
+            .then(response => response.json())
+            .then(data => {
+
+              
+
+              
+document.getElementById('forecast-list').innerHTML = '';
+
+              data.list.forEach(day => {
+                const forecastItem = document.createElement('li');
+                forecastItem.innerHTML = `
+                  <h3>${day.dt_txt.split(' ')[0]}</h3>
+                  <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png" alt="${day.weather[0].description}">
+                  <p>Temperature: ${day.main.temp}°C</p>
+                `;
+
+                document.getElementById('forecast-list').appendChild(forecastItem);
+              });
+            });
+        });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

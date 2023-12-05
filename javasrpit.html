@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+        #targetElement {
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="targetElement">Click me!</div>
+    <script>
+        function handleClick(){
+        console.log("click event");
+       }
+    
+       function handleContextMenu(){
+        event.preventDefault();
+        console.log("Contextmenu event (right-click)");
+       }
+    
+       function handleDoubleClick(){
+        console.log("click event");
+       }
+       function handleMouseDown(){
+        console.log("Mousedown event");
+       }
+
+       
+       function handleMouseenter(){
+        console.log("Mouseenter event");
+       }
+       function handleMouseLeave(){
+        console.log("Mouseleave event");
+       }
+
+       function handleMouseMove(){
+        console.log("Mousemove Move");
+       }
+
+       function handleMouseOut(){
+        console.log("Mouseout out");
+       }
+
+       var targetElement = document.getElementById("targetElement");
+
+       targetElement.addEventListener("click",handleClick);
+       targetElement.addEventListener("contextmenu",handleContextMenu);
+       targetElement.addEventListener("dbclick",handleDoubleClick);
+       targetElement.addEventListener("mousedown",handleMouseDown);
+       targetElement.addEventListener("mousecenter",handleMouseenter);
+       targetElement.addEventListener("mouseleave",handleMouseLeave);
+       targetElement.addEventListener("mousedown",handleMouseMove);
+       targetElement.addEventListener("mouseout",handleMouseOut);
+
+    </script>
+</body>
+</html>
