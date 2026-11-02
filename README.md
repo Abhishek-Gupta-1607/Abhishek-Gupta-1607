@@ -254,7 +254,7 @@ A personal portfolio website showcasing my projects, skills, and development jou
 
 ## 🏆 Achievements & Certifications
 
-- 💻 Solved 550+ coding problems across programming platforms.
+- 💻 Solved 600+ coding problems across programming platforms.
 - 🌐 Completed Bits and Bytes of Computer Networking certification.
 - ⏱️ Completed Time Management certification.
 - 🚀 Participated in hackathons and practical development projects.
