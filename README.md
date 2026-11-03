@@ -37,7 +37,7 @@ I'm passionate about building intelligent applications that combine AI, machine 
 - 🧠 Interested in Machine Learning, Deep Learning, and Applied AI.
 - 💻 Experienced in building full-stack applications and backend systems.
 - ☁️ Exploring Cloud Computing, Docker, Jenkins, and DevOps.
-- 🏆 Solved 550+ coding problems across programming platforms.
+- 🏆 Solved 600+ coding problems across programming platforms.
 - 🚀 Always learning, building, and experimenting with new technologies.
 
 ### 🎯 Current Focus
